@@ -1,10 +1,14 @@
 import Note from "./Note";
+import AddNote from "./AddNote";
 
-function NotesList() {
+function NotesList({ notes }) {
   return (
     <>
       <div className="notes-list">
-        <Note />
+        {notes.map((note) => (
+          <Note id={note.id} text={note.text} date={note.date} />
+        ))}
+        <AddNote />
       </div>
     </>
   );
